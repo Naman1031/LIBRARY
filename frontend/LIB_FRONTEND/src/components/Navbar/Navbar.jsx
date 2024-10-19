@@ -3,24 +3,24 @@ import logo from "../../assets/logo_gif.gif";
 
 const Navbar = () => {
   return (
-    <nav className="w-full relative flex justify-between items-center h-12 px-5 py-10">
+    <nav className="w-full relative flex justify-between items-center h-12 px-5 py-10 z-10">
       <div className="pic text-2xl  font-mono font-bold h-[250px]">
         <img src={logo} alt="" className="h-full w-full" />
       </div>
       <div className="options">
         <ul className="flex gap-10">
           <li>
-            <a href="#" className="text-lg font-serif">
+            <a href="/reserveseat" className="text-lg font-serif">
               Reserve Seat
             </a>
           </li>
           <li>
-            <a href="#" className="text-lg font-serif">
+            <a href="/subscriptions" className="text-lg font-serif">
               Subscriptions
             </a>
           </li>
           <li>
-            <a href="#" className="text-lg font-serif">
+            <a href="/about" className="text-lg font-serif">
               About Us
             </a>
           </li>
