@@ -3,23 +3,22 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Layout from "./components/Layout/Layout";
-import { Route,Routes } from "react-router-dom";
-import ReserveSeat from "./components/ReserveSeat/ReserveSeat";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Subscriptions from "./components/Subscriptions/Subscriptions";
+import { Route, Routes } from "react-router-dom";
+import ReserveSeat from "./pages/ReserveSeat/ReserveSeat";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Subscriptions from "./pages/Subscriptions/Subscriptions";
 
 function App() {
-
   return (
     <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/reserveseat" element={<ReserveSeat />} />
-      <Route path="/subscriptions" element={<Subscriptions/>} />
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/reserveseat" element={<ReserveSeat />} />
+        <Route path="/subscriptions" element={<Subscriptions />} />
+      </Routes>
     </>
   );
 }
