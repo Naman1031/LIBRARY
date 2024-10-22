@@ -3,8 +3,8 @@ import logo from "../../assets/logo_gif.gif";
 
 const Navbar = () => {
   return (
-    <nav className="w-full fixed  flex justify-between items-center h-12 px-5 py-10 z-10">
-      <div className="pic text-2xl  font-mono font-bold h-[250px]">
+    <nav className="w-full fixed  flex justify-between items-center h-[6rem] px-5 py-10 z-[100] bg-[#F2E6DC] rounded-lg">
+      <div className="pic text-2xl font-mono font-bold h-[180px]">
         <img src={logo} alt="" className="h-full w-full" />
       </div>
       <div className="options">

@@ -24,4 +24,4 @@ function App() {
 }
 
 export default App;
-//rounded-br-[400px] rounded-bl-[400px]
+
