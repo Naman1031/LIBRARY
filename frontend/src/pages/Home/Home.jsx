@@ -69,6 +69,9 @@ const branches = [
     lng: 77.2433,
     address: "Lajpat Nagar, New Delhi",
   },
+  { 
+    name: 'Janakpuri Library', lat: 28.6219, lng: 77.0890, address: 'Janakpuri, New Delhi' 
+  },
 ];
 
 function Home() {
