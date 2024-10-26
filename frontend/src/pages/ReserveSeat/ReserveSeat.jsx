@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../../components/Layout/Layout";
 import Layout2 from "../../components/Layout/Layout2";
 import { PinContainer } from "../../components/ui/3d-pin";
 import LibraryPopup from "../../components/Reserve_Components/LibraryPopup";
+import { useState } from "react";
 
 const libraries = [
   {
@@ -85,7 +85,7 @@ const ReserveSeat = () => {
                 <div className="image h-[11rem] w-[17rem]">
                   <img
                     src={library.image}
-                    className="h-full w-full rounded-lg "
+                    className="h-full w-full rounded-lg"
                     alt=""
                   />
                 </div>

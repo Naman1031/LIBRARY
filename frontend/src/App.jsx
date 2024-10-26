@@ -1,8 +1,5 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Layout from "./components/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
 import ReserveSeat from "./pages/ReserveSeat/ReserveSeat";
 import Home from "./pages/Home/Home";
