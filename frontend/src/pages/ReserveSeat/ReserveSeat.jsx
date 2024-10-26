@@ -3,6 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import Layout2 from "../../components/Layout/Layout2";
 import { PinContainer } from "../../components/ui/3d-pin";
 import LibraryPopup from "../../components/Reserve_Components/LibraryPopup";
+import { useEffect } from "react";
 
 const libraries = [
   {
@@ -60,6 +61,9 @@ const libraries = [
 ];
 
 const ReserveSeat = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   const [popup, setPopup] = useState(false);
   const [data, setData] = useState({});
   return (
