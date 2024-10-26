@@ -2,7 +2,11 @@ import React from "react";
 import Layout2 from "../../components/Layout/Layout2";
 import { PinContainer } from "../../components/ui/3d-pin";
 import LibraryPopup from "../../components/Reserve_Components/LibraryPopup";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import { useEffect } from "react";
+>>>>>>> fba17d2f7cdc9dedb416674412503515ff5fcdc6
 
 const libraries = [
   {
@@ -60,6 +64,9 @@ const libraries = [
 ];
 
 const ReserveSeat = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   const [popup, setPopup] = useState(false);
   const [data, setData] = useState({});
   return (
@@ -79,7 +86,7 @@ const ReserveSeat = () => {
               key={index}
               title={library.pin_msg}
               containerClassName="max-w-[100vw] w-[auto] my-10 flex items-between flex-wrap "
-              className="h-[20rem] w-[20rem] bg-[#84524D9E]  p-3 rounded-2xl"
+              className="h-[20rem] w-[20rem] right-1 top-1 bg-[#AE8B83] p-3 rounded-2xl"
             >
               <div className="flex flex-col items-center justify-evenly  h-full">
                 <div className="image h-[11rem] w-[17rem]">
