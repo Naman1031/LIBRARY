@@ -79,7 +79,7 @@ const ReserveSeat = () => {
               key={index}
               title={library.pin_msg}
               containerClassName="max-w-[100vw] w-[auto] my-10 flex items-between flex-wrap "
-              className="h-[20rem] w-[20rem] bg-[#84524D9E]  p-3 rounded-2xl"
+              className="h-[20rem] w-[20rem] right-1 top-1 bg-[#AE8B83] p-3 rounded-2xl"
             >
               <div className="flex flex-col items-center justify-evenly  h-full">
                 <div className="image h-[11rem] w-[17rem]">
