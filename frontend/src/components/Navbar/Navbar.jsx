@@ -8,8 +8,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="w-full fixed  flex justify-between items-center h-[6rem] px-5 py-10 z-[100] bg-[#F2E6DC] rounded-lg">
-      <div className="pic text-2xl font-mono font-bold h-[180px]">
-        <img src={logo} alt="" className="h-full w-full" onClick={() => navigate('')} />
+      <div className="h-[160px]">
+        <img src={logo} alt="" className="h-full w-full cursor-pointer" onClick={() => navigate('')} />
       </div>
       <div className="options">
         <ul className="flex gap-10">
