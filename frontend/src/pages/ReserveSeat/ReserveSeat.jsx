@@ -2,11 +2,11 @@ import React from "react";
 import Layout2 from "../../components/Layout/Layout2";
 import { PinContainer } from "../../components/ui/3d-pin";
 import LibraryPopup from "../../components/Reserve_Components/LibraryPopup";
-<<<<<<< HEAD
+
 import { useState } from "react";
-=======
+
 import { useEffect } from "react";
->>>>>>> fba17d2f7cdc9dedb416674412503515ff5fcdc6
+
 
 const libraries = [
   {

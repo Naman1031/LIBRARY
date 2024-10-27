@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import Map from "../../components/Home_components/Map";
-import Navbar from "../../components/Navbar/Navbar";
-import rightarrow from "../../assets/rightarrow.jpg";
 import playstore from "../../assets/playstore.jpg";
 import appstore from "../../assets/appstore.jpg";
-import lib1 from "../../assets/lib1.jpg";
+import lib1 from "../../assets/carousel.jpg";
 import lib2 from "../../assets/lib2.jpg";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
@@ -85,33 +83,37 @@ function Home() {
       address: "Janakpuri, New Delhi",
     },
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  })
   return (
     <>
+    
+    <Layout />
       <div>
-        <Layout />
         {/* Upper Section */}
         <div className="w-full flex items-center justify-center h-[500px] z-10 relative">
           <a href="/">
-            <BiSolidRightArrow className="w-9 h-9 rotate-180" />
+            <BiSolidRightArrow className="w-9 h-9 rotate-180 mt-10" />
           </a>
           <div className="justify-between mx-4 flex px-4">
             <img
               src={lib1}
               alt="Library View"
-              className="w-[500px] h-[350px] rounded-lg shadow-lg cursor-pointer"
+              className="w-[650px] h-[350px] rounded-lg shadow-lg cursor-pointer mt-[4.8rem]"
             />
           </div>
           <div className="cursor-pointer">
-            <BiSolidRightArrow className="w-9 h-9" />
+            <BiSolidRightArrow className="w-9 h-9 mt-10" />
           </div>
         </div>
       </div>
 
       {/* Headings */}
-      <h1 className="text-2xl font-semibold my-4 text-center text-gray-800 translate-x-[-50%] ml-[50%] font-inter">
+      <h1 className="text-2xl font-semibold my-4 text-center text-gray-800 translate-x-[-50%] ml-[50%]">
         VISIT THE LIBRARY FOR PERSONALIZED EXPERIENCE
       </h1>
-      <h2 className="text-xl font-semibold text-gray-600 mb-8 translate-x-[-15%] ml-[50%] font-inter">
+      <h2 className="text-xl font-semibold text-gray-600 mb-8 translate-x-[-15%] ml-[47%]">
         EXPLORE LIBRARIES NEAR YOU
       </h2>
 
@@ -120,7 +122,7 @@ function Home() {
         {/* <div className="relative h-[300px] w-[300px] top-40 rounded-2xl">
           <Map branches={branches} maxDistance={5} />
         </div> */}
-        <button className="px-9 py-2 font-bold text-white bg-red-500 border border-black rounded-lg shadow-md hover:bg-black hover:text-red-500 transition-transform active:scale-105" onClick={() => navigate('/reserveseat')}>
+        <button className="px-9 py-2 font-bold text-white bg-[#F4BD0A] border border-black rounded-lg shadow-md hover:bg-white hover:text-[#F4BD0A]" onClick={() => navigate('/reserveseat')}>
           RESERVE NOW
         </button>
         <img
