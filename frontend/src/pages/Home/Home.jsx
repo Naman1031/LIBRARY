@@ -1,113 +1,68 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
-import Map from "../../components/Home_components/Map";
 import playstore from "../../assets/playstore.jpg";
 import appstore from "../../assets/appstore.jpg";
 import lib1 from "../../assets/carousel.jpg";
-import lib2 from "../../assets/lib2.jpg";
+import carousel2 from "../../assets/carousel2.png";
+import lib3 from "../../assets/lib3.jpg";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 function Home() {
+  const carouselImages = [lib1, carousel2, lib1, lib1, lib1, lib1];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const navigate = useNavigate();
-  const branches = [
-    {
-      name: "Connaught Place Library",
-      lat: 28.6315,
-      lng: 77.2167,
-      address: "Connaught Place, New Delhi",
-    },
-    {
-      name: "India Gate Library",
-      lat: 28.6129,
-      lng: 77.2295,
-      address: "India Gate, New Delhi",
-    },
-    {
-      name: "Hauz Khas Village Library",
-      lat: 28.5535,
-      lng: 77.1926,
-      address: "Hauz Khas, New Delhi",
-    },
-    {
-      name: "Chandni Chowk Library",
-      lat: 28.6562,
-      lng: 77.2301,
-      address: "Chandni Chowk, Old Delhi",
-    },
-    {
-      name: "Lotus Temple Library",
-      lat: 28.5535,
-      lng: 77.2588,
-      address: "Lotus Temple, New Delhi",
-    },
-    {
-      name: "Qutub Minar Library",
-      lat: 28.5244,
-      lng: 77.1855,
-      address: "Qutub Minar, Mehrauli, New Delhi",
-    },
-    {
-      name: "Delhi University Library",
-      lat: 28.6884,
-      lng: 77.209,
-      address: "North Campus, Delhi University",
-    },
-    {
-      name: "Nehru Place Library",
-      lat: 28.5494,
-      lng: 77.2518,
-      address: "Nehru Place, New Delhi",
-    },
-    {
-      name: "Karol Bagh Library",
-      lat: 28.651,
-      lng: 77.1909,
-      address: "Karol Bagh, New Delhi",
-    },
-    {
-      name: "Sarojini Nagar Library",
-      lat: 28.5743,
-      lng: 77.1991,
-      address: "Sarojini Nagar, New Delhi",
-    },
-    {
-      name: "Lajpat Nagar Library",
-      lat: 28.5678,
-      lng: 77.2433,
-      address: "Lajpat Nagar, New Delhi",
-    },
-    {
-      name: "Janakpuri Library",
-      lat: 28.6219,
-      lng: 77.089,
-      address: "Janakpuri, New Delhi",
-    },
-  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  })
+  });
+
+  const handleNext = () => {
+    setCurrentIndex((prev) =>
+      prev === carouselImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? carouselImages.length - 1 : prev - 1
+    );
+  };
+
   return (
     <>
-    
-    <Layout />
-      <div>
-        {/* Upper Section */}
-        <div className="w-full flex items-center justify-center h-[500px] z-10 relative">
-          <a href="/">
-            <BiSolidRightArrow className="w-9 h-9 rotate-180 mt-10" />
-          </a>
-          <div className="justify-between mx-4 flex px-4">
-            <img
-              src={lib1}
-              alt="Library View"
-              className="w-[650px] h-[350px] rounded-lg shadow-lg cursor-pointer mt-[4.8rem]"
-            />
-          </div>
-          <div className="cursor-pointer">
-            <BiSolidRightArrow className="w-9 h-9 mt-10" />
-          </div>
+      <Layout />
+      {/* Upper Section */}
+      <div className="flex flex-col items-center">
+      <div className="w-full flex items-center justify-center h-[470px] z-10 relative">
+        <div className="cursor-pointer" onClick={handlePrev}>
+          <BiSolidRightArrow className="w-9 h-9 rotate-180 mt-10 text-center" />
+        </div>
+        <div className="justify-between mx-4 flex px-4">
+          <img
+            src={carouselImages[currentIndex]}
+            alt="Library View"
+            className="w-[650px] h-[350px] rounded-lg shadow-lg cursor-pointer mt-[4.8rem] "
+          />
+        </div>
+        <div className="cursor-pointer" onClick={handleNext}>
+          <BiSolidRightArrow className="w-9 h-9 mt-10 text-center" />
+        </div>
+        
+      </div>
+      <div className="flex justify-center space-x-4 my-4 mt-3 relative">
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            ></button>
+          ))}
         </div>
       </div>
+      
 
       {/* Headings */}
       <h1 className="text-2xl font-semibold my-4 text-center text-gray-800 translate-x-[-50%] ml-[50%]">
@@ -118,15 +73,15 @@ function Home() {
       </h2>
 
       {/* Reservation Section */}
-      <div className="flex items-center justify-evenly  bg-[#A86C22] h-[300px] w-[800px] rounded-md mx-auto mb-12 sticky px-2">
-        {/* <div className="relative h-[300px] w-[300px] top-40 rounded-2xl">
-          <Map branches={branches} maxDistance={5} />
-        </div> */}
-        <button className="px-9 py-2 font-bold text-white bg-[#F4BD0A] border border-black rounded-lg shadow-md hover:bg-white hover:text-[#F4BD0A]" onClick={() => navigate('/reserveseat')}>
+      <div className="flex items-center justify-between bg-[#C1A690] h-[275px] w-[800px] rounded-md mx-auto mb-10 relative px-1">
+        <button
+          className="px-9 py-2 font-bold text-white bg-[#F4BD0A] border border-black rounded-lg shadow-md hover:bg-white hover:text-[#F4BD0A] ml-[15%]"
+          onClick={() => navigate("/reserveseat")}
+        >
           RESERVE NOW
         </button>
         <img
-          src={lib2}
+          src={lib3}
           alt="Library Interior"
           className="h-60 w-auto mx-4 rounded-lg shadow-lg"
         />
