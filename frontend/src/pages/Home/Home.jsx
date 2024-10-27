@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import rightarrow from "../../assets/rightarrow.jpg";
 import playstore from "../../assets/playstore.jpg";
 import appstore from "../../assets/appstore.jpg";
-import lib1 from "../../assets/lib1.jpg";
+import lib1 from "../../assets/carousel.png";
 import lib2 from "../../assets/lib2.jpg";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
@@ -94,11 +94,11 @@ function Home() {
           <a href="/">
             <BiSolidRightArrow className="w-9 h-9 rotate-180" />
           </a>
-          <div className="justify-between mx-4 flex px-4">
+          <div className="justify-between mx-5 flex px-4">
             <img
               src={lib1}
               alt="Library View"
-              className="w-[500px] h-[350px] rounded-lg shadow-lg cursor-pointer"
+              className="w-[800px] h-[350px] rounded-lg shadow-lg cursor-pointer"
             />
           </div>
           <div className="cursor-pointer">
