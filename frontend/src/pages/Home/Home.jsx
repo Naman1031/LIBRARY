@@ -4,7 +4,6 @@ import playstore from "../../assets/playstore.jpg";
 import appstore from "../../assets/appstore.jpg";
 import lib1 from "../../assets/carousel.png";
 import lib2 from "../../assets/lib2.jpg";
-import lib1 from "../../assets/carousel.jpg";
 import carousel2 from "../../assets/carousel2.png";
 import lib3 from "../../assets/lib3.jpg";
 import { BiSolidRightArrow } from "react-icons/bi";
